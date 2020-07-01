@@ -17,7 +17,7 @@ My preferred shell is bash, Ubuntu uses dash as default in order to change it to
 ```sudo dpkg-reconfigure dash```
 
 ### gnome-terminal
-- Add padding to gnome by copying my *gtk.css* to *.config/gtk-3.0/*
+- Add padding to gnome by copying my *gtk.css* (from the otherDotFiles/gtk-3 directory) to *.config/gtk-3.0/*
 - Set a shortcut for *"Hide and Show Menubar"* and hide it by default (**Preferences**>**General**>Show menubar by default...)
 - Install the [Argonaut color scheme](https://mayccoll.github.io/Gogh/) and set it as default
 - Set the background color to *#222222* (**Preferences**>**Your scheme**>**Colors**)
@@ -34,5 +34,7 @@ Most of the improvements I hae done can be replicated by copying my *.bashrc* fi
 - Create a scripts directory in your home directory (or somewhere else) and add it to *$PATH*
 - Download [pfetch](https://github.com/dylanaraps/pfetch) into your scripts directory and add it to the end of your *.bashrc*
 - [Install powerline-shell](https://github.com/b-ryan/powerline-shell)
+  - Copy ```otherDotFiles/powerline/config.json``` to ```~/.config/powerline-shell/```
+  - Copy ```otherDotFiles/powerline/weightless.py``` to ```~/powerlinethemes/```
 - 
 
