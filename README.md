@@ -23,7 +23,7 @@ My preferred shell is bash, Ubuntu uses dash as default in order to change it to
 - Set the background color to *#222222* (**Preferences**>**Your scheme**>**Colors**)
 - In the same menu enable transparent background and adjust it to your liking
 - Install the [Ubuntu Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts) (**This is a requirement if you want to use the powerline-shell**)
-  - Clone the repo, preferrably into /tmp because it's huge (multiple gigabytes) and you only need one of the fonts
+  - Clone the repo, preferrably into /tmp because it's huge (11GB) and you only need one of the fonts
   - CD into the directory
   - Install the font using ```./install.sh "UbuntuMono"```
   - Change the font in gnome-terminal (**Preferences**>**Your scheme**>Text) to ```UbuntuMono Nerd Font Regular```
