@@ -1,0 +1,10 @@
+{
+  "theme": "~/powerlinethemes/weightless.py",
+  "segments": [
+    "username",
+    "hostname",
+    "cwd",
+    "git",
+    "root"
+  ]
+}
