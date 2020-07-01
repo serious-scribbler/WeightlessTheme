@@ -12,6 +12,10 @@ The weightless theme is my personal lightweight theme for awesomewm
 Here are some tools and settings I used to improve the look of some tools.
 All mentioned config files can be found in the otherDotFiles directory.
 
+## Ubuntu specific
+My preferred shell is bash, Ubuntu uses dash as default in order to change it to bash use
+```sudo dpkg-reconfigure dash```
+
 ### gnome-terminal
 - Add padding to gnome by copying my *gtk.css* to *.config/gtk-3.0/*
 - Set a shortcut for *"Hide and Show Menubar"* and hide it by default (**Preferences**>**General**>Show menubar by default...)
