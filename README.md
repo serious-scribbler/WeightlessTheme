@@ -36,5 +36,5 @@ Most of the improvements I hae done can be replicated by copying my *.bashrc* fi
 - [Install powerline-shell](https://github.com/b-ryan/powerline-shell)
   - Copy ```otherDotFiles/powerline/config.json``` to ```~/.config/powerline-shell/```
   - Copy ```otherDotFiles/powerline/weightless.py``` to ```~/powerlinethemes/```
-- 
+- Add this alias ```alias ddir='du -h --max-depth=1'``` to *.bashrc* to allow the use of *ddir* to get the size of a directory
 
