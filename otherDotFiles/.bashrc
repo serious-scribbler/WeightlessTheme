@@ -118,6 +118,10 @@ fi
 
 # Add ddir alias to get directory sizes
 alias ddir='du -h --max-depth=1'
+
+# Display pfetch after every clear
+alias clear='clear && pfetch'
+
 #Add ~/scripts to PATH
 export PATH="$HOME/scripts:$PATH"
 
