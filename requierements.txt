@@ -2,3 +2,4 @@ xfce4-power-manager
 compton
 nitrogen
 suckless-tools
+scrot
