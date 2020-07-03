@@ -2,7 +2,8 @@
 The weightless theme is my personal lightweight theme for awesomewm
 
 ## Screenshots
-*coming soon*
+This theme is still a work in progress, but here is a screenshot, that showcases it's current state:
+<img src="screenshots/screenshot1.png" />
 
 ## Getting Started
 *coming soon*
