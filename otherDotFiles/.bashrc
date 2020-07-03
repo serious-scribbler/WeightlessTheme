@@ -122,6 +122,9 @@ alias ddir='du -h --max-depth=1'
 # Display pfetch after every clear
 alias clear='clear && pfetch'
 
+# CD awesome config
+alias cawm='cd ~/.config/awesome'
+
 #Add ~/scripts to PATH
 export PATH="$HOME/scripts:$PATH"
 
