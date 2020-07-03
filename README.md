@@ -2,13 +2,14 @@
 The weightless theme is my personal lightweight theme for awesomewm
 
 ## Screenshots
-This theme is still a work in progress, but here is a screenshot, that showcases it's current state:
+This theme is still a work in progress, but here is a screenshot that showcases it's current state:
 <img src="screenshots/screenshot1.png" />
 
 ## Getting Started
 *coming soon*
 
 ## Requirements
+I will write a better summary when the theme is in a more finished state.
 - All required packages (not including awesome) are listed in requirements.txt
 - You might need additional packages if you are not using Ubuntu
 
@@ -17,7 +18,7 @@ Here are some tools and settings I used to improve the look of some tools.
 All mentioned config files can be found in the otherDotFiles directory.
 
 ### Ubuntu specific
-My preferred shell is bash, Ubuntu uses dash as default in order to change it to bash use
+My preferred shell is bash. Ubuntu uses dash as default, in order to change it to bash use
 ```sudo dpkg-reconfigure dash```
 
 ### gnome-terminal
@@ -35,13 +36,13 @@ My preferred shell is bash, Ubuntu uses dash as default in order to change it to
 
 ### bash
 Most of the improvements I have done can be replicated by copying my *.bashrc* file. I still included all steps in the following list for anyone who wants to use their own .bashrc.
-- Create a scripts directory in your home directory (or somewhere else) and add it to *$PATH*
+- Create a *scripts* directory in your home directory (or somewhere else) and add it to *$PATH*
 - Download [pfetch](https://github.com/dylanaraps/pfetch) into your scripts directory and add it to the end of your *.bashrc*
 - [Install powerline-shell](https://github.com/b-ryan/powerline-shell)
   - Copy ```otherDotFiles/powerline/config.json``` to ```~/.config/powerline-shell/```
   - Copy ```otherDotFiles/powerline/weightless.py``` to ```~/powerlinethemes/```
 - Add this alias ```alias ddir='du -h --max-depth=1'``` to *.bashrc* to allow the use of *ddir* to get the size of a directory
-- Add the cawm alias to quickly cd into the awesome directory: ```alias cawm='cd ~/.config/awesome```
+- Add the *cawm* alias to quickly cd into the awesome directory: ```alias cawm='cd ~/.config/awesome```
 
 ### Qt 5 Apps
 Qt 5 can be customized by installing a theme.
