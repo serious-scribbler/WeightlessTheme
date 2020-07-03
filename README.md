@@ -42,4 +42,8 @@ Most of the improvements I have done can be replicated by copying my *.bashrc* f
 - Add this alias ```alias ddir='du -h --max-depth=1'``` to *.bashrc* to allow the use of *ddir* to get the size of a directory
 - Add the cawm alias to quickly cd into the awesome directory: ```alias cawm='cd ~/.config/awesome```
 
+### Qt 5 Apps
+Qt 5 can be customized by installing a theme.
+- Install my [Inverse-Dark-Weightless](https://github.com/serious-scribbler/Inverse-Dark-Weightless) theme.<br>
+  Instructions can be found in the readme of my repo.
 
