@@ -29,6 +29,28 @@ local volumecfg = volume_control {device="pulse", font = "sans 13"}
 -- Custom Variables
 local screen_brightness = 1.0
 
+
+
+-- Default Programs
+file_browser = "dolphin"
+terminal = "x-terminal-emulator"
+editor = os.getenv("EDITOR") or "gedit"
+editor_cmd = terminal .. " -e " .. editor
+web_browser = "vivaldi"
+
+
+-- User directories
+home_dir = os.getenv("HOME")
+theme_path = home_dir .. "/.config/awesome/theme.lua"
+screenshot_dir = home_dir .. "/Pictures/screenshots"
+
+-- Modkey
+modkey = "Mod4"
+
+
+-- Theme file
+beautiful.init(theme_path)
+
 -- Touchpad setup:
 --    Modify according to your touchpads features
 --      You can get your device name with xinput list
@@ -79,20 +101,7 @@ end
 -- }}}
 
 -- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers.
-beautiful.init("/home/phil/.config/awesome/theme.lua")
 
--- This is used later as the default terminal and editor to run.
-terminal = "x-terminal-emulator"
-editor = os.getenv("EDITOR") or "gedit"
-editor_cmd = terminal .. " -e " .. editor
-
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 awful.layout.layouts = {
@@ -339,7 +348,7 @@ globalkeys = gears.table.join(
               {description = "show main menu", group = "awesome"}),
 
     -- Custom
-    awful.key({modkey, }, "e", function () awful.spawn("nautilus") end,
+    awful.key({modkey, }, "e", function () awful.spawn(file_browser) end,
               {description = "open the file manager", group = "apps"}),
     awful.key({}, "XF86AudioRaiseVolume", function () volumecfg:up() end,
               {description = "audio volume increase", group = "system controls"}),
@@ -347,9 +356,9 @@ globalkeys = gears.table.join(
               {description = "audio volume mute", group = "system controls"}),
     awful.key({}, "XF86AudioLowerVolume", function () volumecfg:down() end,
               {description = "audio volume decrease", group = "system controls"}),
-    awful.key({modkey, }, "b", function () awful.spawn("vivaldi") end,
-              {description = "open vivaldi", group = "apps"}),
-    awful.key({}, "Print", function () awful.spawn("scrot") end,
+    awful.key({modkey, }, "b", function () awful.spawn(web_browser) end,
+              {description = "open the web browser", group = "apps"}),
+    awful.key({}, "Print", function () awful.spawn("scrot -q 100 \'" .. screenshot_dir .. "/%B-%d-%Y_%H:%M:%S.png\'") end,
               {description = "take a screenshot", group = "utililities"}),
     awful.key({modkey, "Control"}, "e", function () awful.spawn("xfce4-power-manager -c") end,
               {description = "open battery management", group = "utililities"}),
