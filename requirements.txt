@@ -3,3 +3,4 @@ compton
 nitrogen
 suckless-tools
 scrot
+blueman
