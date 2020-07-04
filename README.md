@@ -13,6 +13,11 @@ I will write a better summary when the theme is in a more finished state.
 - All required packages (not including awesome) are listed in requirements.txt
 - You might need additional packages if you are not using Ubuntu
 
+### Additional Requirements for other distros
+If you are using a distro other than Ubuntu, you might also need to install the following packages:
+- network-manager
+- network-manager-gnome
+
 ## Recommendations
 Here are some tools and settings I used to improve the look of some tools.
 All mentioned config files can be found in the otherDotFiles directory.
