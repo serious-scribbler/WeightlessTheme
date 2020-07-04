@@ -32,7 +32,8 @@ local screen_brightness = 1.0
 
 
 -- Weightless-Theme Config
-bt_applet = true -- Start blueman-applet with awesome
+bt_applet = true -- Start the blueman-applet bluetooth contol applet with awesome
+nm_applet = true -- Start the nm-applet network applet with awesome
 
 -- Default Programs
 file_browser = "dolphin"
@@ -78,6 +79,9 @@ local function run_at_start()
     
     if bt_applet then
         awful.spawn("blueman-applet")
+    end
+    if nm_applet then
+        awful.spawn("nm-applet")
     end
 end
 
