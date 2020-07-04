@@ -31,6 +31,9 @@ local screen_brightness = 1.0
 
 
 
+-- Weightless-Theme Config
+bt_applet = true -- Start blueman-applet with awesome
+
 -- Default Programs
 file_browser = "dolphin"
 terminal = "x-terminal-emulator"
@@ -72,6 +75,10 @@ local function run_at_start()
     awful.spawn("xfce4-power-manager") -- Start power manager
     -- Maximize xrandr brightness
     awful.spawn("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
+    
+    if bt_applet then
+        awful.spawn("blueman-applet")
+    end
 end
 
 
@@ -689,3 +696,4 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 awful.spawn.with_shell("compton")
 awful.spawn.with_shell("nitrogen --restore")
+
