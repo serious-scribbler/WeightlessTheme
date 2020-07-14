@@ -128,6 +128,9 @@ alias cawm='cd ~/.config/awesome'
 #Add ~/scripts to PATH
 export PATH="$HOME/scripts:$PATH"
 
+#Add powerline-shell to PATH
+export PATH="$HOME/.local/bin:$PATH"
+
 function _update_ps1() {
     PS1=$(powerline-shell $?)
 }
