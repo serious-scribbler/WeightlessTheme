@@ -22,10 +22,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
--- Volume Control
-local volume_control = require("volume-control")
-local volumecfg = volume_control {device="pulse", font = "sans 13"}
-
 -- Custom Variables
 local screen_brightness = 1.0
 
@@ -54,6 +50,11 @@ modkey = "Mod4"
 
 -- Theme file
 beautiful.init(theme_path)
+
+
+-- Volume Control Widget
+local volume_control = require("volume-control")
+local volumecfg = volume_control {device="pulse", font = beautiful.font}
 
 -- Touchpad setup:
 --    Modify according to your touchpads features
@@ -699,5 +700,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 awful.spawn.with_shell("compton")
+awful.spawn.with_shell("xrandr --output HDMI-A-0 --primary")
+awful.spawn.with_shell("xrandr --output HDMI-A-0 --left-of DVI-D-0")
+awful.spawn.with_shell("xrandr --output DisplayPort-0 --above HDMI-A-0")
 awful.spawn.with_shell("nitrogen --restore")
-
