@@ -4,3 +4,5 @@ nitrogen
 suckless-tools
 scrot
 blueman
+python3-pip
+pavucontrol
