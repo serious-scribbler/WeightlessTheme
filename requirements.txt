@@ -6,3 +6,6 @@ scrot
 blueman
 python3-pip
 pavucontrol
+htop
+ksysguard
+
