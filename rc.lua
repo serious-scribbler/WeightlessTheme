@@ -34,7 +34,7 @@ nm_applet = true -- Start the nm-applet network applet with awesome
 -- Default Programs
 file_browser = "dolphin"
 terminal = "x-terminal-emulator"
-editor = os.getenv("EDITOR") or "gedit"
+editor = os.getenv("EDITOR") or "kate"
 editor_cmd = terminal .. " -e " .. editor
 web_browser = "vivaldi"
 
