@@ -704,8 +704,8 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.spawn.with_shell("compton")
 awful.spawn.with_shell("xrandr --output HDMI-A-0 --primary")
 awful.spawn.with_shell("xrandr --output HDMI-A-0 --left-of DVI-D-0")
 awful.spawn.with_shell("xrandr --output DisplayPort-0 --above HDMI-A-0")
+awful.spawn.with_shell("compton")
 awful.spawn.with_shell("nitrogen --restore")
