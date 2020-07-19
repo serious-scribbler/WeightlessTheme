@@ -58,8 +58,8 @@ Qt 5 can be customized by installing a theme.
 Here are some fixes for issues I have encountered
 
 ### Huge cursor
-**Description:** The cursor is enormous (~1.5cm/0.6") on some or all windows<br>
-**Obsevations:** This issue can occur with multiple screens or possibly with lower dpi screens. I only encountered it on my desktop with 3 screens (2x 22" 1080p, 1x 19" 1280x1024) but not on my laptop (13" 1080p).<br>
+**Description:** The cursor is enormous (~1.5cm/0.6") on some or all windows<br><br>
+**Obsevations:** This issue can occur with multiple screens or possibly with lower dpi screens. I only encountered it on my desktop with 3 screens (2x 22" 1080p, 1x 19" 1280x1024) but not on my laptop (13" 1080p).<br><br>
 **Fix:** Install an Icon theme with fixed icon size. I am using [DMZ-White-96dpi](https://github.com/serious-scribbler/dmzwhite-96dpi), which is a version of DMZ-White I modified to only use 24x24 icons. Another alternative would be to use the X11-core theme.
 
 ## Attribution
