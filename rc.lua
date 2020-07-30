@@ -325,6 +325,18 @@ root.buttons(gears.table.join(
 ))
 -- }}}
 
+    
+-- Helper functions
+
+-- Switches to the tag with the given number
+function switchToTag(t)
+    local screen = awful.screen.focused()
+    local tag = screen.tags[t]
+    if tag then
+        tag:view_only()
+    end
+end
+
 -- {{{ Key bindings
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -356,7 +368,10 @@ globalkeys = gears.table.join(
               {description = "audio volume mute", group = "system controls"}),
     awful.key({}, "XF86AudioLowerVolume", function () volumecfg:down() end,
               {description = "audio volume decrease", group = "system controls"}),
-    awful.key({modkey, }, "b", function () awful.spawn(web_browser) end,
+    awful.key({modkey, }, "b", function ()
+                switchToTag(3)
+                awful.spawn(web_browser)
+              end,
               {description = "open the web browser", group = "apps"}),
     awful.key({}, "Print", function () awful.spawn("scrot -q 100 \'" .. screenshot_dir .. "/%B-%d-%Y_%H:%M:%S.png\'") end,
               {description = "take a screenshot", group = "utilities"}),
@@ -418,8 +433,11 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey, "Control"}, "c", function () awful.spawn(editor .. " .config/awesome/rc.lua") end,
-              {description = "open the awesome configuration in gedit", group = "awesome"}),
+    awful.key({ modkey, "Control"}, "c", function ()
+                switchToTag(2)
+                awful.spawn(editor .. " .config/awesome/rc.lua")
+              end,
+              {description = "open the awesome configuration in " .. editor, group = "awesome"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
@@ -525,11 +543,7 @@ for i = 1, 9 do
         -- View tag only.
         awful.key({ modkey }, "#" .. i + 9,
                   function ()
-                        local screen = awful.screen.focused()
-                        local tag = screen.tags[i]
-                        if tag then
-                           tag:view_only()
-                        end
+                        switchToTag(i)
                   end,
                   {description = "view tag #"..i, group = "tag"}),
         -- Move client to tag.
