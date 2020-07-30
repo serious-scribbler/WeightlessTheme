@@ -26,11 +26,6 @@ local has_fdo, freedesktop = pcall(require, "freedesktop")
 local screen_brightness = 1.0
 
 
-
--- Weightless-Theme Config
-bt_applet = true -- Start the blueman-applet bluetooth contol applet with awesome
-nm_applet = true -- Start the nm-applet network applet with awesome
-
 -- Default Programs
 file_browser = "dolphin"
 terminal = "x-terminal-emulator"
@@ -63,27 +58,20 @@ local volumecfg = volume_control {device="pulse", font = beautiful.font}
 local function touchpad_configuration()
     -- Enable Two-Finger Scrolling, "libinput Tapping Enabled" 1 typically enables
     -- this feature along with tap to click on non-synaptics devices
-    awful.spawn("xinput set-prop \"SynPS/2 Synaptics TouchPad\" \"Synaptics Two-Finger Scrolling\" 1, 1")
+    awful.spawn.easy_async("xinput set-prop \"SynPS/2 Synaptics TouchPad\" \"Synaptics Two-Finger Scrolling\" 1, 1")
     
     -- Enable natural scolling use "libinput Natural Scrolling Enabled" 1 for
     -- non-synaptics devices
     -- You can adjust the two numbers at the end of the command to change the scrolling speed
-    awful.spawn("xinput set-prop \"SynPS/2 Synaptics TouchPad\" \"Synaptics Scrolling Distance\" -113, 113")
+    awful.spawn.easy_async("xinput set-prop \"SynPS/2 Synaptics TouchPad\" \"Synaptics Scrolling Distance\" -113, 113")
 end
 
 -- Runs additional autostart apart from compton and nitrogen
 local function run_at_start()
     touchpad_configuration()
-    awful.spawn("xfce4-power-manager") -- Start power manager
     -- Maximize xrandr brightness
-    awful.spawn("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
+    awful.spawn.easy_async("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
     
-    if bt_applet then
-        awful.spawn("blueman-applet")
-    end
-    if nm_applet then
-        awful.spawn("nm-applet")
-    end
 end
 
 
@@ -704,5 +692,5 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.spawn.with_shell("compton")
-awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+awful.spawn.easy_async("nitrogen --restore")
