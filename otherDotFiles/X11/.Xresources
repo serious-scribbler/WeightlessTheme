@@ -1,4 +1,1 @@
 Xcursor.size: 24
-exec "xrandr --output HDMI-A-0 --primary"
-exec "xrandr --output HDMI-A-0 --left-of DVI-D-0"
-exec "xrandr --output DisplayPort-0 --above HDMI-A-0"
