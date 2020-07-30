@@ -348,7 +348,7 @@ globalkeys = gears.table.join(
               {description = "show main menu", group = "awesome"}),
 
     -- Custom
-    awful.key({modkey, }, "e", function () awful.spawn(file_browser) end,
+    awful.key({modkey, }, "e", function () awful.spawn.easy_async(file_browser) end,
               {description = "open the file manager", group = "apps"}),
     awful.key({}, "XF86AudioRaiseVolume", function () volumecfg:up() end,
               {description = "audio volume increase", group = "system controls"}),
@@ -356,29 +356,29 @@ globalkeys = gears.table.join(
               {description = "audio volume mute", group = "system controls"}),
     awful.key({}, "XF86AudioLowerVolume", function () volumecfg:down() end,
               {description = "audio volume decrease", group = "system controls"}),
-    awful.key({modkey, }, "b", function () awful.spawn(web_browser) end,
+    awful.key({modkey, }, "b", function () awful.spawn.easy_async(web_browser) end,
               {description = "open the web browser", group = "apps"}),
-    awful.key({}, "Print", function () awful.spawn("scrot -q 100 \'" .. screenshot_dir .. "/%B-%d-%Y_%H:%M:%S.png\'") end,
+    awful.key({}, "Print", function () awful.spawn.easy_async("scrot -q 100 \'" .. screenshot_dir .. "/%B-%d-%Y_%H:%M:%S.png\'") end,
               {description = "take a screenshot", group = "utilities"}),
-    awful.key({modkey, "Control"}, "e", function () awful.spawn("xfce4-power-manager -c") end,
+    awful.key({modkey, "Control"}, "e", function () awful.spawn.easy_async("xfce4-power-manager -c") end,
               {description = "open battery management", group = "utilities"}),
-    awful.key({modkey, "Shift"}, "Escape", function () awful.spawn(terminal .. " -e htop") end,
+    awful.key({modkey, "Shift"}, "Escape", function () awful.spawn.easy_async(terminal .. " -e htop") end,
               {description = "open htop", group = "utilities"}),
-    awful.key({modkey, "Shift"}, "m", function () awful.spawn("ksysguard") end,
+    awful.key({modkey, "Shift"}, "m", function () awful.spawn.easy_async("ksysguard") end,
               {description = "open system monitor", group = "utilities"}),
-    awful.key({modkey, "Control", "Shift"}, "s", function () awful.spawn("shutdown -P now") end,
+    awful.key({modkey, "Control", "Shift"}, "s", function () awful.spawn.easy_async("shutdown -P now") end,
               {description = "shut down the system", group = "system controls"}),
-    awful.key({modkey, "Control", "Shift"}, "r", function () awful.spawn("shutdown -r now") end,
+    awful.key({modkey, "Control", "Shift"}, "r", function () awful.spawn.easy_async("shutdown -r now") end,
               {description = "reboot the system", group = "system controls"}),
     awful.key({modkey, }, "F3",
         function ()
             awful.client.focus.history.previous()
             if screen_brightness < 1.0 then
                 screen_brightness = screen_brightness + 0.1
-                awful.spawn("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
-                awful.spawn("notify-send -t 2500 Brightness \"Brightness set to " .. tostring(screen_brightness*100) .. "%\"")
+                awful.spawn.easy_async("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
+                awful.spawn.easy_async("notify-send -t 2500 Brightness \"Brightness set to " .. tostring(screen_brightness*100) .. "%\"")
             else
-                awful.spawn("notify-send -t 2500 Brightness \"Brightness already maximized\"")
+                awful.spawn.easy_async("notify-send -t 2500 Brightness \"Brightness already maximized\"")
             end
         end,
         {description = "increase screen brightness by 10%", group = "system controls"}),
@@ -387,10 +387,10 @@ globalkeys = gears.table.join(
             awful.client.focus.history.previous()
             if screen_brightness > 0.1 then
                 screen_brightness = screen_brightness - 0.1
-                awful.spawn("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
-                awful.spawn("notify-send -t 2500 Brightness \"Brightness set to " .. tostring(screen_brightness*100) .. "%\"")
+                awful.spawn.easy_async("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
+                awful.spawn.easy_async("notify-send -t 2500 Brightness \"Brightness set to " .. tostring(screen_brightness*100) .. "%\"")
             else
-                awful.spawn("notify-send -t 2500 Brightness \"Brightness already minimized\"")
+                awful.spawn.easy_async("notify-send -t 2500 Brightness \"Brightness already minimized\"")
             end
         end,
         {description = "decrease screen brightness by 10%", group = "system controls"}),
@@ -416,9 +416,9 @@ globalkeys = gears.table.join(
         {description = "go back", group = "client"}),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn.easy_async(terminal) end,
               {description = "open a terminal", group = "launcher"}),
-    awful.key({ modkey, "Control"}, "c", function () awful.spawn(editor .. " .config/awesome/rc.lua") end,
+    awful.key({ modkey, "Control"}, "c", function () awful.spawn.easy_async(editor .. " .config/awesome/rc.lua") end,
               {description = "open the awesome configuration in gedit", group = "awesome"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
