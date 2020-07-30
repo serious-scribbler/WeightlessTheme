@@ -375,10 +375,10 @@ globalkeys = gears.table.join(
             awful.client.focus.history.previous()
             if screen_brightness < 1.0 then
                 screen_brightness = screen_brightness + 0.1
-                awful.spawn.easy_async("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
-                awful.spawn.easy_async("notify-send -t 2500 Brightness \"Brightness set to " .. tostring(screen_brightness*100) .. "%\"")
+                awful.spawn("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
+                awful.spawn("notify-send -t 2500 Brightness \"Brightness set to " .. tostring(screen_brightness*100) .. "%\"")
             else
-                awful.spawn.easy_async("notify-send -t 2500 Brightness \"Brightness already maximized\"")
+                awful.spawn("notify-send -t 2500 Brightness \"Brightness already maximized\"")
             end
         end,
         {description = "increase screen brightness by 10%", group = "system controls"}),
@@ -387,10 +387,10 @@ globalkeys = gears.table.join(
             awful.client.focus.history.previous()
             if screen_brightness > 0.1 then
                 screen_brightness = screen_brightness - 0.1
-                awful.spawn.easy_async("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
-                awful.spawn.easy_async("notify-send -t 2500 Brightness \"Brightness set to " .. tostring(screen_brightness*100) .. "%\"")
+                awful.spawn("xrandr --output eDP-1 --brightness " .. tostring(screen_brightness))
+                awful.spawn("notify-send -t 2500 Brightness \"Brightness set to " .. tostring(screen_brightness*100) .. "%\"")
             else
-                awful.spawn.easy_async("notify-send -t 2500 Brightness \"Brightness already minimized\"")
+                awful.spawn("notify-send -t 2500 Brightness \"Brightness already minimized\"")
             end
         end,
         {description = "decrease screen brightness by 10%", group = "system controls"}),
