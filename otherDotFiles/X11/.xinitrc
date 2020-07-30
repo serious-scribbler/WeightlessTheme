@@ -1,3 +1,2 @@
 export QT_QPA_PLATFORMTHEME="qt5ct"
-Xcursor.size: 24
-
+[[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
