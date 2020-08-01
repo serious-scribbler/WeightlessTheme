@@ -63,4 +63,5 @@ Here are some fixes for issues I have encountered
 **Fix:** Install an Icon theme with fixed icon size. I am using [DMZ-White-96dpi](https://github.com/serious-scribbler/dmzwhite-96dpi), which is a version of DMZ-White I modified to only use 24x24 icons. Another alternative would be to use the X11-core theme.
 
 ## Attribution
-wip
+#### Volume Widget
+This theme uses the the [volume control widget](https://github.com/deficient/volume-control) by [deficient](https://github.com/deficient)
